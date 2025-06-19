@@ -5,15 +5,14 @@
 | Frustum Manipulation | Changed camera perspective, increased triangle count, and adjusted clipping to better visualise the frustum. |
 | Rotation Matrix   | Applied x-axis rotation using `mat_motion` with `Math.PI/2`, changing object orientation.  |
 | Phong Shading             | Implemented Phong lighting model to calculate realistic specular highlights. |
-| Blinn - Phong Reflection             |  Replaced Phong reflection with Blinn-Phong using a halfway vector to compute specular highlights. |
-| Per-Vertex vs Per Fragment (Gouraud Shading)   | Implemented per-vertex (Gouraud) shading, resulting in visible interpolation artifacts compared to per-fragment shading. |
-| Points vs Lines Primitives | Switched triangle rendering to points and lines by changing `gl.drawElements` mode, showing different primitive representations. |
 | Fragment Z Coordinate Shading           | Used `gl_FragCoord.z` to map fragment depth into grayscale, visualising depth variation across the surface. |
 | Adding Random Noise to Vertices      | Added random noise to vertex normals to distort surface appearance without affecting overall shape. |
+| Points vs Lines Primitives | Switched triangle rendering to points and lines by changing `gl.drawElements` mode, showing different primitive representations. |
+| Blinn - Phong Reflection             |  Replaced Phong reflection with Blinn-Phong using a halfway vector to compute specular highlights. |
 | Texture Coordinate Mapping and UV Influence | Used UV coordinates to assign texture colors to the model, revealing how spatial mapping affects appearance. |
 | Depth Testing and Skybox Optimisation | Disabled depth testing to correctly render the skybox behind scene objects and remove occluded fragments. |
 | Texture Filtering and Sampling Artifacts | Compared bilinear/mipmap filtering with nearest-neighbour sampling, highlighting effects on texture smoothness and aliasing.  |
-
+| Per-Vertex vs Per Fragment (Gouraud Shading)   | Implemented per-vertex (Gouraud) shading, resulting in visible interpolation artifacts compared to per-fragment shading. |
 
 
 
@@ -105,8 +104,5 @@ In this task, I investigated how different texture filtering methods affect the 
   <img src="Images/Lab3/L3B/B4ii.png" alt="Description" width="300"/>
 </p>
 
-
-## Texture Coordinate Mapping and UV Influence
-This task explored how UV coordinates (`s` and `t`) influence the way a 2D texture is mapped onto a 3D model. By sampling specific regions of the texture using these coordinates, different parts of the model displayed varying colors. The head appears darker because it maps to the bottom-left of the texture, which contains darker regions, while the body maps to lighter areas. This demonstrates how spatial placement in the texture file can directly affect visual output on the model’s surface.
 
 

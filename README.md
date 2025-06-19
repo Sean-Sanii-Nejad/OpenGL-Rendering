@@ -7,7 +7,8 @@
 | Phong Shading             | Implemented Phong lighting model to calculate realistic specular highlights. |
 | Blinn - Phong Reflection             |  Replaced Phong reflection with Blinn-Phong using a halfway vector to compute specular highlights. |
 | Per-Vertex vs Per Fragment (Gouraud Shading)   | Implemented per-vertex (Gouraud) shading, resulting in visible interpolation artifacts compared to per-fragment shading. |
-| Fragment Z Coordinate Shading           |                |
+| Points vs Lines Primitives | Switched triangle rendering to points and lines by changing `gl.drawElements` mode, showing different primitive representations. |
+| Fragment Z Coordinate Shading           | Used `gl_FragCoord.z` to map fragment depth into grayscale, visualising depth variation across the surface. |
 | Adding Random Noise to Vertices      |                |
 | Mapping Texture to Model       |                |
 | Bilinear/Mipmap Blurring      |                |
@@ -53,4 +54,18 @@ For this task, I modified the existing Phong shading algorithm by implementing t
   <img src="Images/Lab3/L3B/B4ii.png" alt="Description" width="300"/>
 </p>
 
+## Points vs Lines Primitives
+In this task, I explored different primitive types by modifying the parameters of the `gl.drawElements` function. I replaced triangle rendering with `gl.POINTS` and adjusted `gl_PointSize` to visualize individual vertices on the mesh. For the second variation, I used `gl.LINES` instead, which connected vertices and emphasized the edges. This allowed for direct comparison between dot-based and edge-based representations of the mesh geometry.
+
+<p float="left">
+  <img src="Images/Lab3/L3C/C1i.png" alt="Description" width="300"/>
+   <img src="Images/Lab3/L3C/C1ii.png" alt="Description" width="300"/>
+</p>
+
+## Fragment Z Coordinate Shading
+In this task, I accessed the fragment's depth value using `gl_FragCoord.z` and applied a linear transformation to normalize it to a 0–1 range. I inverted the result to better highlight depth differences and passed this normalized value to all RGB channels in `gl_FragColor`, producing a grayscale depth visualization. The result appears smoother than previous outputs, likely due to using triangles instead of points or lines, which ensures more continuous interpolation between fragments.
+
+<p float="left">
+  <img src="Images/Lab3/L3C/C2.png" alt="Description" width="300"/>
+</p>
 

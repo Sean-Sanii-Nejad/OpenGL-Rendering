@@ -98,6 +98,7 @@ In this task, I investigated how different texture filtering methods affect the 
 </p>
 
 ##  Per-Vertex vs Per Fragment (Gouraud Shading) 
+In this task, I implemented per-vertex shading using the Gouraud shading technique. This method calculates lighting at the vertices and interpolates the result across the surface. As a result, the shading appears less accurate and visually less appealing compared to per-fragment shading, which computes lighting per pixel. This difference is evident in the visible edges and rigid shading transitions around the model.
 
 <p float="left">
   <img src="Images/Lab3/L3B/B4i.png" alt="Description" width="300"/>
